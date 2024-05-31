@@ -1,4 +1,4 @@
-a = c
+a = 'C'
 a = 'T'
 
 print(a)
