@@ -1,2 +1,3 @@
+str = input()
 for _ in range(8):
-    print("G", end="")
+    print(str, end="")
