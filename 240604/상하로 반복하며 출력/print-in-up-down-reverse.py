@@ -8,13 +8,13 @@ for i in range(1, n+1):
             print(up, end="")
         else:
             print(down, end="")
-    if up == 4:
+    if up == n:
         up = 1
     else:
         up += 1
     
     if down == 1:
-        down = 4
+        down = n
     else:
         down -= 1
     print()
