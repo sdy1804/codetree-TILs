@@ -4,6 +4,7 @@ cnt_arr = [0] * 10
 for i in range(len(arr)):
     if arr[i] == 0:
         arr = arr[:i]
+        break
 
 for j in arr:
     cnt_arr[j//10] += 1
