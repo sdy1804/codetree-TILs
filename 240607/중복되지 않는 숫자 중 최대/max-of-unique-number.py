@@ -1,14 +1,11 @@
 n = int(input())
 arr = list(map(int, input().split()))
-check = False
-max_val = arr[0]
+new_arr = []
 
-for elem in arr[1:]:
-    if max_val < elem:
-        max_val = elem
-    elif max_val == elem:
-        check = True
-if check == True:
-    print(-1)
+for elem in arr:
+    if arr.count(elem) == 1:
+        new_arr.append(elem)
+if new_arr:
+    print(max(new_arr))
 else:
-    print(max_val)
+    print(-1)
