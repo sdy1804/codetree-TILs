@@ -1,10 +1,11 @@
 n = int(input())
 arr = list(map(int, input().split()))
 
-arr = arr[arr.index(min(arr)):]
-# print(arr)
-if arr[1:] == []:
-    print(0)
-else:
-    max_val = max(arr)
-    print(max_val - arr[0])
+max_profit = 0
+
+for i in range(n):
+    for j in range(i+1, n):
+        profit = arr[j] - arr[i]
+        if profit > max_profit:
+            max_profit = profit
+print(max_profit)
