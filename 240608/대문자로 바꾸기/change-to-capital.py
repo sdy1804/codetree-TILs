@@ -1,5 +1,5 @@
 arr_2d = [list(input().split()) for i in range(5)]
-start_ascii = ord(arr_2d[0][0]) - 32
+# start_ascii = ord(arr_2d[0][0]) - 32
 # print(chr(start_ascii))
 # print(chr(start_ascii + 32))
 
