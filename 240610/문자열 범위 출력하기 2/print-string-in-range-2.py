@@ -1,7 +1,7 @@
 string = input()
 n = int(input())
 
-if n > len(string):
+if n >= len(string):
     for elem in string[::-1]:
         print(elem, end="")
 else:
