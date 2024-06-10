@@ -3,6 +3,9 @@ cnt = 1
 new_string = []
 len_sum = 0
 
+if len(string) == 1:
+        new_string.append(f"{string[0]}{cnt}")
+
 for i in range(1, len(string)):
     if string[i] == string[i-1]:
         cnt += 1
