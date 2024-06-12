@@ -1,9 +1,10 @@
 def is_days(m, d):
     if m >= 1 and m <= 12:
-        if m == 2 and d >= 1 and d <= 28:
-            return True
-        else:
-            return False
+        if m == 2:
+            if d >= 1 and d <= 28:
+                return True
+            else:
+                return False
         if m < 8 and m % 2 != 0:
             if d >= 1 and d <= 31:
                 return True
