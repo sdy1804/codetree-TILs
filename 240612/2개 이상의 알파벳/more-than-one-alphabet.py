@@ -6,7 +6,7 @@ def check_alpha(string):
     return cnt
 
 A = input()
-if check_alpha(A) >= 2:
+if check_alpha(A) >= 1:
     print('Yes')
 else:
     print('No')
