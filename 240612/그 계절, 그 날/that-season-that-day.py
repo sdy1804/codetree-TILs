@@ -35,7 +35,7 @@ def check_days(y, m, d):
                 return True
             else:
                 return False
-    else:
+    elif leaf_year(y) == False:
         if m == 2:
             if d >= 1 and d <= 28:
                 return True
@@ -56,7 +56,7 @@ def check_days(y, m, d):
                 return True
             else:
                 return False
-        if m < 8 and m % 2 == 0:
+        if m <= 8 and m % 2 == 0:
             if d >= 1 and d <= 31:
                 return True
             else:
