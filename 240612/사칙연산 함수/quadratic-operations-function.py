@@ -8,7 +8,7 @@ def diff_(A, B):
 
 def divide_(A, B):
     divides = A / B
-    return divides
+    return int(divides)
 
 def multiply_(A, B):
     multiplys = A * B
@@ -22,7 +22,7 @@ if o == '+':
 elif o == '-':
     print(f"{a} {o} {c} = {diff_(a, c)}")
 elif o == '/':
-    print(f"{a} {o} {c} = {divide_(a, c):.0f}")
+    print(f"{a} {o} {c} = {divide_(a, c)}")
 elif o == '*':
     print(f"{a} {o} {c} = {multiply_(a, c)}")
 else:
