@@ -11,10 +11,11 @@ T_arr = []
 #     if cnt == len(T):
 #         T_arr.append(arr[i])
 for i in range(n):
-    if len(arr[i]) > len(T):
+    if len(arr[i]) >= len(T):
         if arr[i][:len(T)] == T:
             T_arr.append(arr[i])
 
 T_arr.sort()
+# print(T_arr)
 
 print(T_arr[k-1])
