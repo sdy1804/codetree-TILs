@@ -15,9 +15,9 @@ for i in range(len(arr)):
     if arr[i].weather == 'Rain':
         rain_arr.append(arr[i])
 
+index = 0
 for idx, data in enumerate(rain_arr):
-    index = 0
-    if data.date < rain_arr[index].date:
+    if data.date <= rain_arr[index].date:
         index = idx
 
 print(rain_arr[index].date, rain_arr[index].day, rain_arr[index].weather)
