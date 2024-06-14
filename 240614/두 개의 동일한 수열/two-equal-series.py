@@ -11,6 +11,7 @@ for i in range(n):
         same = True
     else:
         same =False
+        break
 
 if same == True:
     print('Yes')
