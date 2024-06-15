@@ -12,11 +12,12 @@ days = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 def count_date(month, date):
     elapsed_date = 0
     for i in range(month):
-        elapsed_date += days[month]
+        elapsed_date += days[i]
     elapsed_date += date
     return elapsed_date
 
 date_diff = count_date(m2, d2) - count_date(m1, d1)
+# print(date_diff)
 cnt = date_diff // 7
 # print(cnt)
 day_cnt = date_diff % 7
