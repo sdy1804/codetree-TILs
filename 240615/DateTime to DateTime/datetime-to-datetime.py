@@ -14,7 +14,7 @@ def count_mins(d, h, m):
     elapsed_time += d * 60 * 24
     return elapsed_time
 
-if (count_mins(a, b, c) - count_mins(11, 11, 11)) > 0:
+if (count_mins(a, b, c) - count_mins(11, 11, 11)) >= 0:
     print(count_mins(a, b, c) - count_mins(11, 11, 11))
 else:
     print(-1)
