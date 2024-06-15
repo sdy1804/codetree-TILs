@@ -18,9 +18,42 @@ def count_date(month, date):
 
 date_diff = count_date(m2, d2) - count_date(m1, d1)
 cnt = date_diff // 7
+# print(cnt)
 day_cnt = date_diff % 7
-total_cnt = cnt + day_cnt
-if A == 'Mon':
-    total_cnt += 1
-
+# print(day_cnt)
+# day_cnt % 7 == 0일 때 -> 월이면 + 1, 아니면 cnt
+# day_cnt & 7 == 1일 때 -> 월, 화면 +1, 아니면 cnt ...
+total_cnt = 0
+if day_cnt == 0:
+    if A == 'Mon':
+        total_cnt = cnt + 1
+    else:
+        total_cnt = cnt
+elif day_cnt == 1:
+    if A == 'Mon' or A == 'Tue':
+        total_cnt = cnt + 1
+    else:
+        total_cnt = cnt
+elif day_cnt == 2:
+    if A == 'Mon' or A == 'Tue' or A =='Wed':
+        total_cnt = cnt + 1
+    else:
+        total_cnt = cnt
+elif day_cnt == 3:
+    if A == 'Mon' or A == 'Tue' or A == 'Wed' or A == "Thu":
+        total_cnt = cnt + 1
+    else:
+        total_cnt = cnt
+elif day_cnt == 4:
+    if A == 'Mon' or A =='Tue' or A =='Wed' or A == 'Thu' or A == 'Fri':
+        total_cnt = cnt + 1
+    else:
+        total_cnt = cnt
+elif day_cnt == 5:
+    if A == 'Mon' or A == 'Tue' or A == 'Wed' or A == 'Thu' or A == 'Fri' or A == 'Sat':
+        total_cnt = cnt + 1
+    else:
+        total_cnt = cnt  
+elif day_cnt == 6:
+        total_cnt = cnt              
 print(total_cnt)
