@@ -17,11 +17,11 @@ def count_date(month, date):
     return elapsed_date
 
 date_diff = count_date(m2, d2) - count_date(m1, d1)
-# print(date_diff)
+# print('date_diff', date_diff)
 cnt = date_diff // 7
-# print(cnt)
+# print('cnt', cnt)
 day_cnt = date_diff % 7
-# print(day_cnt)
+# print('day_cnt', day_cnt)
 # day_cnt % 7 == 0일 때 -> 월이면 + 1, 아니면 cnt
 # day_cnt & 7 == 1일 때 -> 월, 화면 +1, 아니면 cnt ...
 total_cnt = 0
@@ -56,5 +56,8 @@ elif day_cnt == 5:
     else:
         total_cnt = cnt  
 elif day_cnt == 6:
-        total_cnt = cnt              
+    if A == 'Mon' or A == 'Tue' or A == 'Wed' or A == 'Thu' or A == 'Fri' or A == 'Sat' or A == 'Sun':
+        total_cnt = cnt + 1
+    else:
+        total_cnt = cnt            
 print(total_cnt)
