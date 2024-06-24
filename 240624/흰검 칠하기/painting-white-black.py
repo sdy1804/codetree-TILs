@@ -8,12 +8,12 @@ for i in range(len(arr)):
 # 아무 것도 안 칠했으면 0
 # 끝나고 나서 count의 인덱스가 4 라면, ans의 같은 인덱스의 값을 회색인 3으로 변경
 
-count = [0] * 100 * 1000 * 2
-ans = [0] * 100 * 1000 * 2
+count = [0] * 1000 * 1000 * 2
+ans = [0] * 1000 * 1000 * 2
 # count = [0] * 15
 # ans = [0] * 15
 
-start_point = 100000
+start_point = 500000
 for i in range(len(arr)):
     if arr[i][1] == 'R':
         for j in range(start_point, start_point + arr[i][0]):
