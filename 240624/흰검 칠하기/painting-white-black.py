@@ -29,7 +29,7 @@ for i in range(len(arr)):
         # print('white',count)
 
 for i in range(len(count)):
-    if count[i] == 4:
+    if count[i] >= 4:
         ans[i] = 3
 # print(ans)
 print(ans.count(2), ans.count(1), ans.count(3))
