@@ -12,8 +12,8 @@ for i in range(len(sqr1)):
     sqr1[i] += abs(OFFSET)
     sqr2[i] += abs(OFFSET)
 
-
-ans = [[0] * 2100 for _ in range(2100)]
+set_column = 2100
+ans = [[0] * set_column for _ in range(set_column)]
 
 for i in range(sqr1[0], sqr1[2]):
     for j in range(sqr1[1], sqr1[3]):
@@ -22,16 +22,22 @@ for i in range(sqr1[0], sqr1[2]):
 for i in range(sqr2[0], sqr2[2]):
     for j in range(sqr2[1], sqr2[3]):
         ans[i][j] = 2
-
-column, max_row = 0, 0
+# print(ans)
+row, max_column= 0, 0
 for i in range(len(ans)):
     if 1 in ans[i]:
-        column += 1
-    now_row = 0
-    for j in range(len(ans[i])):
+        row += 1
+    first_column, last_column = 0, 0
+    for j in range(0, len(ans[i])):
         if ans[i][j] == 1:
-            now_row += 1
-    if now_row > max_row:
-        max_row = now_row
+            first_column = j
+            break
+    for j in range(len(ans[i]) - 1, -1, -1):
+        if ans[i][j] == 1:
+            last_column = j
+            break
+    now_column = last_column - first_column + 1
+    if now_column > max_column:
+        max_column = now_column
 
-print(max_row * column)
+print(max_column * row)
