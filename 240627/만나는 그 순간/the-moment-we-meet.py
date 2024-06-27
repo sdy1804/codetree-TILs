@@ -38,7 +38,11 @@ for i in range(len(move_B)):
             B_now_index += 1
 # print(arr_B)
 
+no_match = True
 for i in range(len(arr_A)):
     if arr_A[i] != 0 and arr_A[i] == arr_B[i]:
         print(i)
+        no_match = False
         break
+if no_match:
+    print(-1)
