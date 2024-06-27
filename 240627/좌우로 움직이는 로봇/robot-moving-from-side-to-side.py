@@ -7,7 +7,7 @@ for i in range(len(move_A)):
 for i in range(len(move_B)):
     move_B[i][0] = int(move_B[i][0])
 
-length_arr = 1000000
+length_arr = 10000000
 arr_A = [0] * length_arr
 arr_B = [0] * length_arr
 
