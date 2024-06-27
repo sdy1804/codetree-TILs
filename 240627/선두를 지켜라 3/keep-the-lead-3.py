@@ -2,7 +2,7 @@ N, M = map(int, input().split())
 move_A = [list(map(int, input().split())) for _ in range(N)]
 move_B = [list(map(int, input().split())) for _ in range(M)]
 
-length_arr = 100000
+length_arr = 1000000
 arr_A = [0] * length_arr
 arr_B = [0] * length_arr
 
