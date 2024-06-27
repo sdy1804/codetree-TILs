@@ -10,7 +10,7 @@ for i in range(len(move_B)):
 # 입력된 명령어들을 수행하는 동안
 # 배열의 인덱스는 계속 증가하되 R이면 이전 값에서 1씩 증가, L이면 이전 값에서 1씩 감소
 
-length_arr = 2100
+length_arr = 10000
 arr_A = [0] * length_arr
 arr_B = [0] * length_arr
 A_now_index = 1
