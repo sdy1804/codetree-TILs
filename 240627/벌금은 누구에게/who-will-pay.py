@@ -7,8 +7,8 @@ penalties = [0 for _ in range(len(students))]
 penalty = False
 for num in arr:
     penalties[num-1] += 1
-    if 3 in penalties:
-        print(penalties.index(3) + 1)
+    if K in penalties:
+        print(penalties.index(K) + 1)
         penalty = True
         break
 
