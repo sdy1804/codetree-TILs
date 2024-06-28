@@ -2,7 +2,7 @@ n, t = map(int, input().split())
 r, c, d = input().split()
 r, c = int(r), int(c)
 
-dx, dy = [1, 0, 0, -1], [0, 1, -1, 0] # 북 = 0, 동 = 1, 서 = 2, 남 = 3
+dx, dy = [-1, 0, 0, 1], [0, 1, -1, 0] # 북 = 0, 동 = 1, 서 = 2, 남 = 3
 
 def in_range(x, y):
     return x > 0 and x <= n and y > 0 and y <= n
