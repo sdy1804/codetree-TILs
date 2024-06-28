@@ -18,6 +18,9 @@ for i in range(N):
             print(time)
             start_point = True
             break
+    if start_point == True:
+        break
+        
 
 if start_point == False:
     print(-1)
