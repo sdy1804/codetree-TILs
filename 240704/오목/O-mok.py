@@ -10,7 +10,7 @@ win_state = 0
 for i in range(len(arr)):
     for j in range(len(arr[i])):
         # 가로
-        if in_range(i, j+1) and in_range(i, j+2) and in_range(i, j+2) and in_range(i, j+2):
+        if in_range(i, j+1) and in_range(i, j+2) and in_range(i, j+3) and in_range(i, j+4):
             if arr[i][j] == 1 and arr[i][j+1] == 1 and arr[i][j+2] == 1 and arr[i][j+3] == 1 and arr[i][j+4] == 1:
                 win_state = 1
                 center_x, center_y = i+1, j+2+1
