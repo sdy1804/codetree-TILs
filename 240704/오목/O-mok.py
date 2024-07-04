@@ -26,7 +26,7 @@ for i in range(len(arr)):
                 win_state = 2
                 center_x, center_y = i+2+1, j+1
         # 대각선
-        if in_range(i+1, j+1) and in_range(i+2, j+2) and in_range(i+3, j+3) and in_range(i+4, j+4) and in_range(i+1, j-1) and in_range(i+2, j-2) and in_range(i+3, j-3) and in_range(i+4, j-4):
+        if (in_range(i+1, j+1) and in_range(i+2, j+2) and in_range(i+3, j+3) and in_range(i+4, j+4)) or (in_range(i+1, j-1) and in_range(i+2, j-2) and in_range(i+3, j-3) and in_range(i+4, j-4)):
             if arr[i][j] == 1 and arr[i+1][j+1] == 1 and arr[i+2][j+2] == 1 and arr[i+3][j+3] == 1 and arr[i+4][j+4] == 1:
                 win_state = 1
                 center_x, center_y = i+2+1, j+2+1
