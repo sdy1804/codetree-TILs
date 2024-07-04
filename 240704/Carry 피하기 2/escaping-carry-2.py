@@ -23,6 +23,8 @@ for i in range(len(arr) - 2):
                             now_max = arr[i] + arr[j] + arr[k]
                             total_max = max(total_max, now_max)
                             all_carry = False
-print(total_max)
+
 if all_carry:
     print(-1)
+else:
+    print(total_max)
