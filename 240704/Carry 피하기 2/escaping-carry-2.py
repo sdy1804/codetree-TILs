@@ -11,6 +11,7 @@ arr = [int(input()) for _ in range(n)]
 # 전부 다 캐리면 -1 출력
 
 all_carry = True
+total_max = 0
 for i in range(len(arr) - 2):
     for j in range(i+1, len(arr) - 1):
         for k in range(j+1, len(arr)):
@@ -19,7 +20,9 @@ for i in range(len(arr) - 2):
                 if (arr[i] //10 % 10 + arr[j] //10 % 10 + arr[k] //10 % 10) < 10:
                     if (arr[i] //100 % 10 + arr[j] //100 % 10 + arr[k] //100 % 10) < 10:
                         if (arr[i] //1000 + arr[j] //1000 + arr[k] //1000) < 10:
-                            print(arr[i] + arr[j]+ arr[k])
+                            now_max = arr[i] + arr[j] + arr[k]
+                            total_max = max(total_max, now_max)
                             all_carry = False
+print(total_max)
 if all_carry:
     print(-1)
