@@ -9,13 +9,16 @@ for i in range(len(arr)):
             point_x, point_y = i, j
         total_max1 = max(total_max1, now_max)
 # print(total_max1)
+# print(point_x, point_y)
 
 total_max2 = 0
-for i in range(len(arr)-1):
+for i in range(len(arr)):
     for j in range(len(arr[i])-2):
         if i == point_x and (j == point_y or j+1 == point_y or j+2 == point_y):
             continue
         now_max = arr[i][j] + arr[i][j+1] + arr[i][j+2]
+        # print(now_max)
+        # print(i, j)
         total_max2 = max(total_max2, now_max)
 # print(total_max2)
 print(total_max1 + total_max2)
