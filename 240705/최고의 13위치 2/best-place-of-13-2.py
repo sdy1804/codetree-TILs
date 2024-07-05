@@ -13,7 +13,7 @@ for i in range(len(arr)-1):
 total_max2 = 0
 for i in range(len(arr)-1):
     for j in range(len(arr[i])-2):
-        if i == point_x and j == point_y:
+        if i == point_x and (j == point_y or j+1 == point_y or j+2 == point_y):
             continue
         now_max = arr[i][j] + arr[i][j+1] + arr[i][j+2]
         total_max2 = max(total_max2, now_max)
