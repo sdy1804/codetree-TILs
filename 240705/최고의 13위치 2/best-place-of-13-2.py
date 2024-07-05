@@ -5,7 +5,7 @@ total_max1 = 0
 for i in range(len(arr)):
     for j in range(len(arr[i])-2):
         now_max = arr[i][j] + arr[i][j+1] + arr[i][j+2]
-        if now_max > total_max1:
+        if now_max >= total_max1:
             point_x, point_y = i, j
         total_max1 = max(total_max1, now_max)
 # print(total_max1)
