@@ -2,7 +2,7 @@ N, K = map(int, input().split())
 arr = [list(input().split()) for _ in range(N)]
 for i in range(len(arr)):
     arr[i][0] = int(arr[i][0])
-length = 21
+length = 10001
 new_arr = [0] * length
 for i in range(len(arr)):
     new_arr[arr[i][0]] = arr[i][1] 
