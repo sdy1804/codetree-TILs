@@ -10,11 +10,16 @@ B = list(map(int, input().split()))
 cnt = 0
 for i in range(len(A)):
     for j in range(i, len(A)):
+        in_yes = False
         part_A = A[i:j+1]
         if len(part_A) == len(B):
-            cnt += 1 # 길이가 같은 부분집합 수를 카운트 해 놓음
-            for k in range(len(part_A)): # 부분 집합을 돌면서
-                if part_A[k] not in B: # B에 들어있지 않은 수가 나오면,
-                    cnt -= 1 # 카운트 -1만 하고 탈출
-                    break
+            in_yes = True
+            # print(part_A)
+            for k in range(len(B)): 
+                    if B[k] not in part_A:
+                        # print('not in B[k]', B[k])
+                        in_yes = False
+            # print(in_yes)   
+        if in_yes:
+            cnt += 1
 print(cnt)
