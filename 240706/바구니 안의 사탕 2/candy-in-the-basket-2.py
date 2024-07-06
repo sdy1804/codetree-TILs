@@ -6,7 +6,7 @@ arr = [list(map(int, input().split())) for _ in range(N)]
 # c가 0일 경우 -> -3, 3
 # c가 3일 경우 -> 0, 6
 # out of range가 되는 경우 유의
-length = 16
+length = 101
 candy_list = [0] * length
 for i in range(len(arr)):
     candy_list[arr[i][1]] += arr[i][0]
