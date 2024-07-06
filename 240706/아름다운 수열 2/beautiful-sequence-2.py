@@ -12,10 +12,9 @@ for i in range(len(A)):
     for j in range(i, len(A)):
         part_A = A[i:j+1]
         if len(part_A) == len(B):
-            cnt += 1
-            # print('bef',cnt)
-            for k in range(len(part_A)):
-                if part_A[k] not in B:
-                    # print(part_A)
-                    cnt -= 1
+            cnt += 1 # 길이가 같은 부분집합 수를 카운트 해 놓음
+            for k in range(len(part_A)): # 부분 집합을 돌면서
+                if part_A[k] not in B: # B에 들어있지 않은 수가 나오면,
+                    cnt -= 1 # 카운트 -1만 하고 탈출
+                    break
 print(cnt)
