@@ -16,9 +16,10 @@ for i in range(len(A)):
             in_yes = True
             # print(part_A)
             for k in range(len(B)): 
-                    if B[k] not in part_A:
-                        # print('not in B[k]', B[k])
-                        in_yes = False
+                if B[k] not in part_A or part_A[k] not in B:
+                    # print('B[k]', B[k])
+                    # print('part_A[k]',part_A[k])
+                    in_yes = False
             # print(in_yes)   
         if in_yes:
             cnt += 1
