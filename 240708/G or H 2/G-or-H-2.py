@@ -3,7 +3,7 @@ arr = [list(input().split()) for _ in range(N)]
 for i in range(len(arr)):
     arr[i][0] = int(arr[i][0])
 
-length = 20
+length = 101
 people_list = [0] * length
 for i in range(len(arr)):
     people_list[arr[i][0]] = arr[i][1]
