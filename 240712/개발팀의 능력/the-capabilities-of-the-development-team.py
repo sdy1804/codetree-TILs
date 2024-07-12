@@ -15,7 +15,6 @@ for i in range(len(arr)):
         first_sum += arr[i] + arr[j]
         for k in range(len(arr)):
             for l in range(len(arr)):
-                same_sum = False
                 if k == i or k == j or l == i or l == j or k == l:
                     continue
                 # print('k, l', arr[k], arr[l])
@@ -26,6 +25,8 @@ for i in range(len(arr)):
                 if first_sum == second_sum or first_sum == last_sum or second_sum == last_sum:
                     same_sum = True
                     continue
+                else:
+                    same_sum = False
                 now_min = 0
                 now_min = diff(first_sum, second_sum, last_sum)
                 total_min = min(total_min, now_min)
