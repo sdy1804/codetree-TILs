@@ -9,22 +9,24 @@ arr = [list(map(int, input().split())) for _ in range(N)]
 # 위 아래 반대 내용
 # 선분1의 x1이 선분2의 x1보다 클 때 -> 선분1의 x2가 선분2의 x2보다 작으면 겹쳐짐
 # 선분1의 x1이 선분2의 x1보다 클 때 -> 선분1의 x2가 선분2의 x2보다 크면 겹치지 않음
+# 겹쳐지지 않은 선분의 수를 세는 법?
 
-cnt = 0 
+cnt = [0] * N
 for i in range(N):
     for j in range(i+1, N):
         # print(arr[i], arr[j])
+        # print(i, j)
         l1_x1, l1_x2 = arr[i][0], arr[i][1]
         l2_x1, l2_x2 = arr[j][0], arr[j][1]
         if l1_x1 < l2_x1:
             if l1_x2 < l2_x2:
-                cnt += 0
+                pass
             else:
-                cnt += 1
+                cnt[i], cnt[j] = 1, 1 
         else:
             if l1_x2 < l2_x2:
-                cnt += 1
+                cnt[i], cnt[j] = 1, 1
             else:
-                cnt += 0
-# print(cnt)
-print(N - (cnt + 1))
+                pass
+        # print(cnt)
+print(N - cnt.count(1))
