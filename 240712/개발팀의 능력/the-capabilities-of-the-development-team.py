@@ -8,6 +8,7 @@ def diff(a, b, c):
     return val_max - val_min
 
 total_min = sys.maxsize
+same_sum = True
 for i in range(len(arr)):
     for j in range(i + 1, len(arr)):
         # print('i, j', arr[i],arr[j])
@@ -23,14 +24,11 @@ for i in range(len(arr)):
                 last_sum = sum(arr) - first_sum - second_sum
                 # print('f, s, l', first_sum, second_sum, last_sum)
                 if first_sum == second_sum or first_sum == last_sum or second_sum == last_sum:
-                    same_sum = True
                     continue
-                else:
-                    same_sum = False
                 now_min = 0
                 now_min = diff(first_sum, second_sum, last_sum)
                 total_min = min(total_min, now_min)
-
+                same_sum = False
 if same_sum:
     print(-1)
 else:
