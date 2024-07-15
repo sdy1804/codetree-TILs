@@ -29,13 +29,13 @@ for i in range(len(arr2)):
     cnt += 1
     # print(cheese_lst)
 
-ans = [0] * (N + 1)
-
-for i in range(len(arr1)):
-    for j in range(len(cheese_lst)):
-        # print(i, j)
-        if cheese_lst[j] == 1 and j == arr1[i][1]: # 상한 치즈의 인덱스와 현재 상한 치즈를 먹은 사람의 인덱스가 같을 때
-            # print(arr1[i])
-            ans[arr1[i][0]] = 1 # 약을 먹어야 하는 사람으로 체크
-# print(ans)
-print(ans.count(1))
+total_max = 0
+for i in range(1, M + 1):
+    ans = [0] * (N + 1)
+    for j in range(len(arr1)):
+        if cheese_lst[i] == 1 and i == arr1[j][1] : # 상한 치즈의 인덱스와 현재 상한 치즈를 먹은 사람의 인덱스가 같을 때
+            # print(arr1[j])
+            ans[arr1[j][0]] = 1 # 약을 먹어야 하는 사람으로 체크
+    now_max = ans.count(1)
+    total_max = max(total_max, now_max)
+print(total_max)
