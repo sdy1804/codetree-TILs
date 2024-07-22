@@ -10,9 +10,10 @@ arr = [list(map(int, input().split())) for _ in range(N)]
 
 arr2 = arr.copy()
 
-for i in range(3):
+for i in range(2):
     x_max, y_max = False, False
     total_max = 0
+    now_max = 0
     x_point = 0
     y_point = 0
     for j in range(11):
@@ -28,32 +29,48 @@ for i in range(3):
         # print('total_max', total_max)
         if total_max == now_max_x:
             x_point = j
-            x_max = True
         elif total_max == now_max_y:
             y_point = j
-            y_max = True
     # print('total_max, x_point, x_max, y_point, y_max', total_max, x_point, x_max, y_point, y_max)
     rmv_list = []
-    for l in range(len(arr2)):
-        if x_max == True:
-            if arr2[l][0] == x_point:
-                rmv_list.append(arr2[l])
-        if y_max == True:
-            if arr2[l][1] == y_point:
-                rmv_list.append(arr2[l])
+    x_cnt, y_cnt = 0, 0
+    for i in range(len(arr2)):
+        if arr2[i][0] == x_point:
+            x_cnt += 1
+        if arr2[i][1] == y_point:
+            y_cnt += 1
+    if total_max == x_cnt:
+        for j in range(len(arr2)):
+            if arr2[j][0] == x_point:
+                rmv_list.append(arr2[j])
+    if total_max == y_cnt:
+        for j in range(len(arr2)):
+            if arr2[j][1] == y_point:
+                rmv_list.append(arr2[j])
+
     # print('rmv_list', rmv_list)
     for l in range(len(rmv_list)):
         if rmv_list[l] in arr2:
             arr2.remove(rmv_list[l])
-    # print(arr2)
+    # print('left_arr2', arr2)
 
-one_more_left = False
-if len(arr2) == 0 or len(arr2) == 1:
-    one_more_left = False
-else:
-    one_more_left = True
 
-if one_more_left:
-    print(0)
-else:
+
+all_x = True
+for j in range(len(arr2)):
+    if arr2[j][0] != arr[0][0]:
+        all_x = False
+        break
+# print(all_x)
+
+all_y = True
+for j in range(len(arr2)):
+    if arr2[j][1] != arr[0][1]:
+        all_y = False
+        break
+# print(all_y)
+
+if all_x  == True or all_y == True or len(arr2) == 1:
     print(1)
+else:
+    print(0)
