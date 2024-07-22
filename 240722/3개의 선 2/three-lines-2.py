@@ -12,7 +12,7 @@ x_point = 0
 y_point = 0
 arr2 = arr.copy()
 
-for i in range(2):
+for i in range(3):
     x_max, y_max = False, False
     for j in range(11):
         now_max_x = 0
@@ -24,6 +24,7 @@ for i in range(2):
                 now_max_y += 1
         # print('i, now_max_x, now_max_y', i, now_max_x, now_max_y)
         total_max = max(now_max_x, now_max_y, total_max)
+        # print('total_max', total_max)
         if total_max == now_max_x:
             x_point = i
             x_max = True
@@ -44,11 +45,13 @@ for i in range(2):
             arr2.remove(rmv_list[l])
     # print(arr2)
 
-all_same = False
-for i in range(len(arr2)):
-    if len(arr2) == 1 or arr[i][0] == arr[0][0] or arr[i][1] == arr[0][1]:
-        all_same = True
-if all_same == True:
-    print(1)
+one_more_left = False
+if len(arr2) == 0 or len(arr2) == 1:
+    one_more_left = False
 else:
+    one_more_left = True
+
+if one_more_left:
     print(0)
+else:
+    print(1)
