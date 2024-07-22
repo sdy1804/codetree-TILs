@@ -7,36 +7,38 @@ arr = [list(map(int, input().split())) for _ in range(N)]
 # 다시한번 돌면서 남은 좌표들에서 x, y중 최대로 많은 위치로 설정했을 때
 # 모든 좌표가 사라지는지 체크
 
-total_max = 0
-x_point = 0
-y_point = 0
+
 arr2 = arr.copy()
 
 for i in range(3):
     x_max, y_max = False, False
+    total_max = 0
+    x_point = 0
+    y_point = 0
     for j in range(11):
         now_max_x = 0
         now_max_y = 0
-        for k in range(len(arr)):
-            if arr[k][0] == i:
+        for k in range(len(arr2)):
+            if arr2[k][0] == j:
                 now_max_x += 1
-            if arr[k][1] == i:
+            if arr2[k][1] == j:
                 now_max_y += 1
-        # print('i, now_max_x, now_max_y', i, now_max_x, now_max_y)
+        # print('j, now_max_x, now_max_y', j, now_max_x, now_max_y)
         total_max = max(now_max_x, now_max_y, total_max)
         # print('total_max', total_max)
         if total_max == now_max_x:
-            x_point = i
+            x_point = j
             x_max = True
         elif total_max == now_max_y:
-            y_point = i
+            y_point = j
             y_max = True
+    # print('total_max, x_point, x_max, y_point, y_max', total_max, x_point, x_max, y_point, y_max)
     rmv_list = []
     for l in range(len(arr2)):
         if x_max == True:
             if arr2[l][0] == x_point:
                 rmv_list.append(arr2[l])
-        elif y_max == True:
+        if y_max == True:
             if arr2[l][1] == y_point:
                 rmv_list.append(arr2[l])
     # print('rmv_list', rmv_list)
