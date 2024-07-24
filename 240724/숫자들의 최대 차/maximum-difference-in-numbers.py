@@ -11,13 +11,16 @@ for i in range(N):
     now_max_len = 0
     now_min, now_max = arr[i], arr[i]
     temp_list.append(now_min)
-    for j in range(i+1, N):
+    for j in range(N):
+        # if i == j:
+        #     continue
         if abs(arr[j] - now_min) <= K and abs(arr[j] - now_max) <= K:
             temp_list.append(arr[j])
             now_min = min(temp_list)
             now_max = max(temp_list)
+            # print('diff, now_max, now_min', now_max - now_min, now_max, now_min)
             # print(temp_list)
             now_max_len = len(temp_list)
-            # print(now_max_len)
+            # print('now_max_len', now_max_len)
             total_max_len = max(now_max_len, total_max_len)
 print(total_max_len)
