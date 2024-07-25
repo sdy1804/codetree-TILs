@@ -11,21 +11,26 @@ arr = list(map(int, input().split()))
 
 def find_case(a):
     temp_list = []
+    now_max = 0
     for i, elem in enumerate(arr):
-        if elem <= a:
+        if elem <= a or i == 0 or i == (len(arr)-1):
             temp_list.append(i)
     # print(temp_list)
     if len(temp_list) == 1:
-        return False
+        return False, None
     for j in range(1, len(temp_list)):
         dist = temp_list[j] - temp_list[j-1]
         if dist > k:
-            return False
-    return True
+            return False, None
+    for i in range(len(temp_list)):
+        now_max = max(now_max, arr[temp_list[i]])
+    # print('now_max', now_max)
+    return True, now_max
 
 # print(find_case(1))
 total_max_min = sys.maxsize
 for i in range(1, max(arr)+1):
-    if find_case(i):
-        total_max_min = min(total_max_min, i)
+    bl, max_val = find_case(i)
+    if bl:
+        total_max_min = min(total_max_min, max_val)
 print(total_max_min)
