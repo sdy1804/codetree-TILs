@@ -17,4 +17,16 @@ for i in range(N):
             bomb_list[arr[i]] += 1
             break
     # print(bomb_list)
-print(bomb_list.index(max(bomb_list)))
+
+max_elem = max(bomb_list)
+for i, elem in enumerate(bomb_list):
+    # print(i, elem)
+    now_max_idx = 0
+    if max_elem == elem:
+        if i >= now_max_idx:
+            now_max_idx = i
+    if max_elem == 0:
+        now_max_idx = 0
+print(now_max_idx)
+# print(max(bomb_list))
+# print(bomb_list.index(max(bomb_list)))
