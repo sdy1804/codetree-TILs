@@ -14,6 +14,8 @@ for i in range(1, arr[0]):
         now_val = arr[j] - now_list[j]
         now_list.append(now_val)
         # print(now_list)
+    if 0 in now_list:
+        continue
     total_arr.append(now_list)
 # print(total_arr)
 total_arr.sort(reverse=True)
