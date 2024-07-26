@@ -19,9 +19,9 @@ for i in range(N):
     # print(bomb_list)
 
 max_elem = max(bomb_list)
+now_max_idx = 0
 for i, elem in enumerate(bomb_list):
     # print(i, elem)
-    now_max_idx = 0
     if max_elem == elem:
         if i >= now_max_idx:
             now_max_idx = i
