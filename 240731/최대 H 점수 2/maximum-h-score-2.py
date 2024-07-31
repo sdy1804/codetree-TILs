@@ -27,7 +27,10 @@ for i in range(max(arr)+1):
         for j in range(len(arr)):
             if arr[j] < i:
                 max_idx = max(j, max_idx)
-        arr[max_idx] += 1
+        for j in range(len(arr)):
+            if arr[j] == arr[max_idx]:
+                arr[j] += 1
+        # arr[max_idx] += 1
         for k in range(len(arr)):
             if arr[k] >= i:
                 now_cnt += 1
