@@ -16,6 +16,7 @@ for val_max in range(max(arr), sum(arr)+1):
             parts += arr[i]
     temp_sum.append(parts)
     # print(temp_sum)
-    if len(temp_sum) == m:
-        print(max(temp_sum))
+    if len(temp_sum) <= m:
+        # print(len(temp_sum))
+        print(val_max)
         break
