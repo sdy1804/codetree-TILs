@@ -11,6 +11,9 @@ programmers = []
 for i in range(ord('A'), ord('A')+n):
     programmers.append(chr(i))
 
+if arr[p-1][1] == 0:
+    programmers.clear()
+
 for msg in range(p-1, len(arr)):
     if arr[msg][0] in programmers:
         programmers.remove(arr[msg][0])
