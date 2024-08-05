@@ -17,6 +17,8 @@ if arr[p-1][1] == 0:
 for msg in range(p-1, len(arr)):
     if arr[msg][0] in programmers:
         programmers.remove(arr[msg][0])
+if arr[p-1][1] == arr[p-2][1]:
+    programmers.remove(arr[p-2][0])
 
 for elem in programmers:
     print(elem, end=" ")
