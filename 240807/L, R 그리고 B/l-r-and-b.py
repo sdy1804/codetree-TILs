@@ -26,9 +26,9 @@ if (B_column < R_column < L_column or B_column > R_column > L_column) and B_row 
 elif (B_row < R_row < L_row or B_row > R_row > L_row) and B_column == R_column == L_column:
     ans = abs(B_row - L_row) + 1
 elif B_row == L_row:
-    ans = abs(B_column - L_column - 1)
+    ans = abs(B_column - L_column) - 1
 elif B_column == L_column:
-    ans = abs(B_row - L_row - 1)
+    ans = abs(B_row - L_row) - 1
 else:
     ans = abs(B_row - L_row) + (abs(B_column - L_column) - 1)
 print(ans)
