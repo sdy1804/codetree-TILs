@@ -11,15 +11,17 @@ for idx in range(n):
     least_num = min(least_num, arr[idx])
 
 second_least_num = 1000
+second_idx = 0
 for i in range(n):
     if arr[i] > least_num:
         second_least_num = min(second_least_num, arr[i])
         if second_least_num == arr[i]:
             second_idx = i
-print('second_least_num', second_least_num)
+# print('second_least_num', second_least_num)
+# print('second_idx', second_idx)
 
 cnt = arr.count(second_least_num)
-print('second_num cnt', cnt)
+# print('second_num cnt', cnt)
 
 if cnt == 1:
     print(second_idx+1)
