@@ -35,6 +35,8 @@ if arr[-1] == 0:
 
 if temp_dist < zero_dist:
     arr[-1] = 1
+else:
+    arr[insert_idx] = 1
 # print(arr)
 
 dist_min = 100000
