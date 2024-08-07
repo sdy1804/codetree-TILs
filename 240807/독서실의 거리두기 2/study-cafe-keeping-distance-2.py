@@ -24,17 +24,29 @@ for first in range(N):
 
 insert_idx = (X_1 + X_2) // 2
 temp_dist = insert_idx - X_1
+# arr[insert_idx] = 1
+# print(arr)
 
-zero_dist = 0
+last_zero_dist = 0
 if arr[-1] == 0:
     for idx in range(-1, -N-1, -1):
         if arr[idx] == 1:
-            zero_dist = abs(-1 - idx)
+            last_zero_dist = abs(-1 - idx)
             break
-# print(zero_dist)
+# print(last_zero_dist)
 
-if temp_dist < zero_dist:
+first_zero_dist = 0
+if arr[0] == 0:
+    for idx in range(N):
+        if arr[idx] == 1:
+            first_zero_dist = abs(0 - idx)
+            break
+# print(first_zero_dist)
+
+if last_zero_dist > first_zero_dist and last_zero_dist > temp_dist:
     arr[-1] = 1
+elif first_zero_dist > last_zero_dist and first_zero_dist > temp_dist:
+    arr[0] = 1
 else:
     arr[insert_idx] = 1
 # print(arr)
