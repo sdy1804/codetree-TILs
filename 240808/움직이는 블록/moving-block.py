@@ -10,33 +10,15 @@ ans_block_num = sum(arr) // N
 ans_arr = [ans_block_num] * N
 cnt_block = 0
 
-while arr != ans_arr:
-    max_val = max(arr)
-    second_max_val = 0
+while arr.count(ans_block_num) < N:
+    arr.sort()
 
-    for i in range(len(arr)):
-        if max_val == arr[i]:
-            max_val_idx = i
+    diff = ans_block_num - arr[0]
+    diff_max = abs(ans_block_num - arr[-1])
+    print('diff, diff_max', diff, diff_max)
+    arr[0] += diff
+    arr[-1] -= diff_max
+    print(arr)
 
-    for j in range(len(arr)):
-        if j != max_val_idx and arr[j] < max_val:
-            second_max_val = max(second_max_val, arr[j])
-    # print('max_val, second_max_val', max_val, second_max_val)
-    
-    diff = max_val - second_max_val
     cnt_block += diff
-    temp_arr = arr.copy()
-    min_diff = 100000
-    for k in range(len(arr)):
-        if temp_arr[k] != ans_block_num:
-            temp_arr[k] += diff
-    for k in range(len(arr)):
-        if arr[k] != ans_block_num:
-            now_diff = abs(temp_arr[k] - ans_block_num)
-            min_diff = min(now_diff, min_diff)
-            if min_diff == now_diff:
-                now_min_diff_idx = k
-    arr[now_min_diff_idx] += diff
-    arr[max_val_idx] -= diff
-    # print(arr)
 print(cnt_block)
