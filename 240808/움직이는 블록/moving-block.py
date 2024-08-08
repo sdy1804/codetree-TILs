@@ -15,10 +15,10 @@ while arr.count(ans_block_num) < N:
 
     diff = ans_block_num - arr[0]
     diff_max = abs(ans_block_num - arr[-1])
-    print('diff, diff_max', diff, diff_max)
+    # print('diff, diff_max', diff, diff_max)
     arr[0] += diff
     arr[-1] -= diff_max
-    print(arr)
+    # print(arr)
 
     cnt_block += diff
 print(cnt_block)
