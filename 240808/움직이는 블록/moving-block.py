@@ -10,15 +10,7 @@ ans_block_num = sum(arr) // N
 ans_arr = [ans_block_num] * N
 cnt_block = 0
 
-while arr.count(ans_block_num) < N:
-    arr.sort()
-
-    diff = ans_block_num - arr[0]
-    diff_max = abs(ans_block_num - arr[-1])
-    # print('diff, diff_max', diff, diff_max)
-    arr[0] += diff
-    arr[-1] -= diff_max
-    # print(arr)
-
-    cnt_block += diff
+for blocks in arr:
+    if blocks > ans_block_num:
+        cnt_block += blocks - ans_block_num
 print(cnt_block)
