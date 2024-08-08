@@ -1,14 +1,17 @@
 n = int(input())
 arr = [list(map(int, input().split())) for _ in range(n)]
 
-arr.sort()
-
-first_leng = abs(arr[0][0] - arr[-2][1])
-# print(first_leng)
-second_leng = abs(arr[1][0] - arr[-1][1])
-# print(second_leng)
-
-if first_leng < second_leng:
-    print(first_leng)
-else:
-    print(second_leng)
+ans = 100000
+for i in range(n):
+    now_nums = arr[i]
+    arr.remove(arr[i])
+    # print(arr)
+    val_max, val_min = 0, 100000
+    for j in range(len(arr)):
+        val_min = min(val_min, arr[j][0])
+        val_max = max(val_max, arr[j][1])
+    length = val_max - val_min
+    ans = min(length, ans)
+    arr.insert(i, now_nums)
+    # print(arr)
+print(ans)
