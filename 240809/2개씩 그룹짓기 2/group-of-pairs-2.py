@@ -13,7 +13,7 @@ smalls_half = arr[:total_nums//2]
 # print(bigs_half, smalls_half)
 
 val_min = 1000000
-for i in range(n):
+for i in range(len(smalls_half)):
     diffs = bigs_half[i] - smalls_half[i]
     # print('diffs', diffs)
     val_min = min(diffs, val_min)
