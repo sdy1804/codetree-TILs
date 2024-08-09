@@ -1,3 +1,5 @@
+import sys
+
 n = int(input())
 arr = list(map(int, input().split()))
 
@@ -12,7 +14,7 @@ bigs_half = arr[total_nums//2:]
 smalls_half = arr[:total_nums//2]
 # print(bigs_half, smalls_half)
 
-val_min = 1000000
+val_min = sys.maxsize
 for i in range(len(smalls_half)):
     diffs = bigs_half[i] - smalls_half[i]
     # print('diffs', diffs)
