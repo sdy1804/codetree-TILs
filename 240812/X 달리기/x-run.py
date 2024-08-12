@@ -10,7 +10,7 @@ time = 0
 while dist < X:
     time += 1
     dist += 1 * velo
-    print('dist, time, velo', dist, time, velo)
+    # print('dist, time, velo', dist, time, velo)
     if dist < X // 2:
         velo += 1
     elif dist == X // 2:
