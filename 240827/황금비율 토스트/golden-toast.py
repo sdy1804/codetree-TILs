@@ -28,6 +28,7 @@ class DoublyLinkedList:
             self.tail.prev = new_node
     
     def erase(self, node):
+        next_node = node.next
         if node == self.begin():
             temp = self.head
             temp.next.prev = None
@@ -38,6 +39,7 @@ class DoublyLinkedList:
             node.next.prev = node.prev
             node.prev = None
             node.next = None
+        return next_node
     
     def insert(self, node, new_data):
         if node == self.begin():
@@ -70,29 +72,17 @@ for j in range(m):
     if command[j][0] == 'L':
         if it != DLL.head:
             it = it.prev
-        else:
-            continue
         # print(command[j][0], it.data)
     elif command[j][0] == 'R':
         if it != DLL.tail:
             it = it.next
-        else:
-            continue
         # print(command[j][0], it.data)
     elif command[j][0] == 'D':
-        if it == DLL.head:
-            DLL.erase(it)
-            it = DLL.head
-            # print(it.data)
-        elif it != DLL.tail:
-            DLL.erase(it.next)
-            it = it.next
-        else:
-            continue
+        if it != DLL.tail:
+           it = DLL.erase(it)
         # print(command[j][0], it.data)
     elif command[j][0] == 'P':
         DLL.insert(it, command[j][1])
-        it = it.prev
         # print(command[j][0], it.data)
 
 pr = DLL.head
