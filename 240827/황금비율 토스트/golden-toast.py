@@ -34,8 +34,8 @@ class DoublyLinkedList:
             self.head = temp.next
             temp.next = None
         else:
-            node.next.prev = node.prev
             node.prev.next = node.next
+            node.next.prev = node.prev
             node.prev = None
             node.next = None
     
