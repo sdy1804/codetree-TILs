@@ -7,16 +7,17 @@ def RadixSort(lst, k):
             if pos == 1:
                 digit = lst[i] % 10
             elif pos == 2:
-                digit = lst[i] // 10
+                digit = lst[i] % 100 // 10
             elif pos == 3:
-                digit = lst[i] // 100
+                digit = lst[i] % 1000 // 100
             elif pos == 4:
-                digit = lst[i] // 1000
+                digit = lst[i] % 10000 // 1000
             elif pos == 5:
-                digit = lst[i] // 10000
+                digit = lst[i] % 100000 // 10000
             else:
                 digit = lst[i] // 100000
-            # print(digit)
+            # print(lst[i])
+            # print('digit', digit)
             arr_new[digit].append(lst[i])
         
         store_arr = []
