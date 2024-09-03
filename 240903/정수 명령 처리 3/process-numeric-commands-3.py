@@ -14,7 +14,7 @@ class Deque:
         return len(self.dq)
     
     def empty(self):
-        if self.size == 0:
+        if len(self.dq) == 0:
             return 1
         else:
             return 0
