@@ -26,19 +26,25 @@ class Stack:
 
 string = input()
 
-s = Stack()
-for i in range(len(string)):
-    if string[i] == '(':
-        s.push(string[i])
-    else:
-        if s.empty() == True: # 아무것도 없을 때 닫는 괄호
-            print('No')
+def sol(string):
+    s = Stack()
+    for i in range(len(string)):
+        if string[i] == '(':
+            s.push(string[i])
         else:
-            s.pop()
-    # print(s.top())
-    # print(s.size())
-# print(s.empty())
-if s.empty() == False:
-    print('No')
-else:
+            if s.empty() == True: # 아무것도 없을 때 닫는 괄호
+                return False
+            else:
+                s.pop()
+        # print(s.top())
+        # print(s.size())
+    # print(s.empty())
+    if s.empty() == False:
+        return False
+    else:
+        return True
+
+if sol(string):
     print('Yes')
+else:
+    print('No')
