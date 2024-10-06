@@ -7,6 +7,9 @@ max_teamleader, max_member = map(int, input().split())
 # 팀장이 검사하고 남은 명수 % 팀원 한 명당 검사가능한 사람 수 -> 0이 아니면 팀원 +1
 total_num = 0
 for stores in range(n):
+    if num_cumstomer[stores] - max_teamleader <= 0:
+        total_num += 1
+        continue
     num_member = (num_cumstomer[stores] - max_teamleader) // max_member
     # print('첫번째', num_member)
     if (num_cumstomer[stores] - max_teamleader) % max_member != 0:
