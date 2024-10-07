@@ -26,9 +26,12 @@ for row in range(n):
     for column in range(n):
         # print(row, column)
         # print(dup_list_row, dup_list_col)
-        if row+m-1 >= n or column+m-1 >= n or row in dup_list_row or column in dup_list_col:
+        if row in dup_list_row or column in dup_list_col:
             continue
         # print(row, column)
-        ans += check_row(row, column, m)
-        ans += check_column(row, column, m)
+        if row+m-1 < n:
+            ans += check_column(row, column, m)
+        if column+m-1 < n:
+            ans += check_row(row, column, m)
+        
 print(ans)
