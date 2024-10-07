@@ -11,27 +11,27 @@ def check_column(r, c, m):
     for i in range(1, m): # 1, 2
         if grid[r+i-1][c] != grid[r+i][c]:
             return 0
-    dup_list_col.append(c)
-    return 1
+    if c not in dup_list_col:
+        dup_list_col.append(c)
+    # return 1
 
 def check_row(r, c, m):
     for i in range(1, m): # 1, 2
         if grid[r][c+i-1] != grid[r][c+i]:
             return 0
-    dup_list_row.append(r)
-    return 1
+    if r not in dup_list_row:
+        dup_list_row.append(r)
+    # return 1
 
 ans = 0
 for row in range(n):
     for column in range(n):
         # print(row, column)
         # print(dup_list_row, dup_list_col)
-        if row in dup_list_row or column in dup_list_col:
-            continue
-        # print(row, column)
         if row+m-1 < n:
-            ans += check_column(row, column, m)
+            check_column(row, column, m)
         if column+m-1 < n:
-            ans += check_row(row, column, m)
-        
+            check_row(row, column, m)
+ans += len(dup_list_row)
+ans += len(dup_list_col)
 print(ans)
