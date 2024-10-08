@@ -7,28 +7,31 @@ r, c = map(int, input().split())
 # temp를 활용하여 밑에서부터 채워넣음
 # 채워넣은 값을 다시 복사하면 답
 
+def in_range(x, y):
+    return x >= 0 and x <= n-1 and y >= 0 and y <= n-1
+
 def boom(r, c):
     bomb_range = grid[r-1][c-1]
     
     for col_left in range(c-2, c-2-(bomb_range-1), -1): # 왼쪽 터지는 좌표
         # print(r-1, col_left)
-        if col_left >= 0 and n != 1:
+        if col_left >= 0 and in_range(r-1, col_left):
             grid[r-1][col_left] = 0
 
     for col_right in range(c, c+(bomb_range-1)): # 오른쪽 터지는 좌표
         # print(r-1, col_right)
-        if col_right <= c and n != 1:
+        if col_right <= c and in_range(r-1, col_right):
             grid[r-1][col_right] = 0
         
     for row_up in range(r-2, r-2-(bomb_range-1), -1): # 위쪽 터지는 좌표 
         # print(row_up, c-1)
-        if row_up >= 0 and n != 1:
+        if row_up >= 0 and in_range(row_up, c-1):
             grid[row_up][c-1] = 0
         # print(grid)
 
     for row_down in range(r, r+(bomb_range-1)): # 아래쪽 터지는 좌표
         # print(row_down, c-1)
-        if row_down <= r and n != 1:
+        if row_down <= r and in_range(row_down, c-1):
             grid[row_down][c-1] = 0
     
     grid[r-1][c-1] = 0
