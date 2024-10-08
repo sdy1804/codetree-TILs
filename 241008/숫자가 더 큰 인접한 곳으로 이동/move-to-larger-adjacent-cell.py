@@ -14,13 +14,13 @@ def in_range(x, y):
 
 def is_bigger():
     for points in range(len(dx)):
-        if grid[curr_x + dx[points]][curr_y + dy[points]] > grid[curr_x][curr_y]:
+        if in_range(curr_x + dx[points], curr_y + dy[points]) and grid[curr_x + dx[points]][curr_y + dy[points]] > grid[curr_x][curr_y]:
             return True
     return False
 
 while is_bigger():
     for point in range(len(dx)):
-        if grid[curr_x + dx[point]][curr_y + dy[point]] > grid[curr_x][curr_y] and in_range(curr_x + dx[point], curr_y + dy[point]):
+        if in_range(curr_x + dx[point], curr_y + dy[point]) and grid[curr_x + dx[point]][curr_y + dy[point]] > grid[curr_x][curr_y]:
             # print(grid[curr_x + dx[point]][curr_y + dy[point]])
             max_list.append(grid[curr_x + dx[point]][curr_y + dy[point]])
             curr_x, curr_y = curr_x + dx[point], curr_y + dy[point]
