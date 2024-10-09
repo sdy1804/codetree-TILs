@@ -21,7 +21,10 @@ def move(ball_point_list):
 
     for points in range(len(ball_point_list)):
         curr_x, curr_y = ball_point_list[points][0], ball_point_list[points][1]
-        max_point_x, max_point_y = curr_x + dx[0], curr_x + dy[0]
+        for dxs, dys in zip(dx, dy):
+            if in_range(curr_x + dxs, curr_y + dys):
+                max_point_x, max_point_y = curr_x + dxs, curr_y + dys
+        # print(max_point_x, max_point_y)
         for dxs, dys in zip(dx, dy):
             next_x, next_y = curr_x + dxs, curr_y + dys
             if in_range(next_x, next_y) and grid[next_x][next_y] > grid[max_point_x][max_point_y]:
@@ -33,7 +36,7 @@ def move(ball_point_list):
 
 count = [[0]*n for _ in range(n)]
 for i in range(t):
-    # print(ball_points)
+    # print('ball_points', ball_points)
     count = move(ball_points)
     # print(count)
     ball_points = []
