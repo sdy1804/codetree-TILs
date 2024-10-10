@@ -23,12 +23,11 @@ def max_points(x, y): # 격자 순회하면서 최대값 좌표 찾는 함수
     dxs, dys = [-1, 1, 0, 0], [0, 0, -1, 1]
     max_num, max_pos = 0, (0, 0)
 
-    if count[x][y] == 1:
-        for dx, dy in zip(dxs, dys):
-            next_x, next_y = x + dx, y + dy
-            if in_range(next_x, next_y) and grid[next_x][next_y] > max_num:
-                max_num = grid[next_x][next_y]
-                max_pos = (next_x, next_y)
+    for dx, dy in zip(dxs, dys):
+        next_x, next_y = x + dx, y + dy
+        if in_range(next_x, next_y) and grid[next_x][next_y] > max_num:
+            max_num = grid[next_x][next_y]
+            max_pos = (next_x, next_y)
     return max_pos
 
 def apply_to_next(x, y): # 갱신된 좌표 기록
@@ -48,7 +47,8 @@ def move_all():
     
     for r in range(n): # 구슬 위치 확인하면서 next_count 기록
         for c in range(n):
-            apply_to_next(r, c)
+            if count[r][c] == 1:
+                apply_to_next(r, c)
     
     for r in range(n): # count 갱신
         for c in range(n):
