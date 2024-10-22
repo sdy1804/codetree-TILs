@@ -48,8 +48,8 @@ def get_max_second(lefttop_x, lefttop_y, vst):
     debuging = [[0 for _ in range(m)] for _ in range(n)]
     total_max = -10000
     lefttop_x_max, lefttop_y_max, rightbot_x_max, rightbot_y_max = 0, 0, 0, 0
-    for r in range(0, n-1):
-        for c in range(0, m-1):
+    for r in range(0, n):
+        for c in range(0, m):
             now_val = -10000
             if check_duplication(lefttop_x, lefttop_y, lefttop_x+r, lefttop_y+c, vst):
                 now_val = square_sum(lefttop_x, lefttop_y, lefttop_x+r, lefttop_y+c)
