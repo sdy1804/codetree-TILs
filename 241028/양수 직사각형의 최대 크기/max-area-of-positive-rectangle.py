@@ -30,4 +30,7 @@ def search_max_rect():
     return max_size
 
 ans = search_max_rect()
-print(ans)
+if ans <= 0:
+    print(-1)
+else:
+    print(ans)
