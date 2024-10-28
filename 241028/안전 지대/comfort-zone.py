@@ -44,7 +44,7 @@ def DFS(x, y, K):
             DFS(next_x, next_y, K)
 
 Ks = find_max_K()
-max_K = 0
+max_K = 1
 answer = 0
 for K in range(1, Ks+1):
     count_region = 0
